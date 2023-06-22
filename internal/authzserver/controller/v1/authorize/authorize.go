@@ -16,19 +16,19 @@ import (
 	"github.com/marmotedu/iam/internal/pkg/code"
 )
 
-// AuthzController create a authorize handler used to handle authorize request.
+// AuthzController create an authorize handler used to handle authorize request.
 type AuthzController struct {
 	store authorizer.PolicyGetter
 }
 
-// NewAuthzController creates a authorize handler.
+// NewAuthzController creates an authorize handler.
 func NewAuthzController(store authorizer.PolicyGetter) *AuthzController {
 	return &AuthzController{
 		store: store,
 	}
 }
 
-// Authorize returns whether a request is allow or deny to access a resource and do some action
+// Authorize returns whether a request is allowed or deny to access a resource and do some action
 // under specified condition.
 func (a *AuthzController) Authorize(c *gin.Context) {
 	var r ladon.Request
